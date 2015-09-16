@@ -6,64 +6,7 @@ angular.manifiest('app', [
     'app.services',
     'app.services.api',
     'app.demos'
-]);;angular.module('mocks', ['App', 'ngMockE2E'])
-.run(function($httpBackend, CONFIGURATION, $log) {
-  
-    var endpoint  = CONFIGURATION.endpoint;
-    var Api = null;
-    var build = function(Api){
-        var exp = new RegExp(endpoint + Api ); 
-        return exp;
-    };
-    
-    //-------------------------------------------------------------
-    //COMPONENTS: GALE-TABLE EXAMPLE 2
-    Api = "/Mocks/User/";
-    $httpBackend.whenGET(build(Api)).respond(function(method, url, data) {
-        var result = {
-          "offset": 0,
-          "limit": 10,
-          "total": 10,
-          "elapsedTime": "00:00:00.3685175",
-          "items": [
-            {
-              "token": "f8302e8c-ea34-4daa-a2f1-9ec727d7a4e9",
-              "nombre": "SPENCE",
-              "cliente": "SPENCE",
-              "imagen": "",
-              "creacion": "2015-06-03T12:47:40",
-              "latitud": "25",
-              "longitud": "25",
-              "zoom": "14"
-            },
-            {
-              "token": "65b7a72b-b508-4594-9c89-2efdae9e7e91",
-              "nombre": "PROYECTO-MEL",
-              "cliente": "MINERA ESCONDIDA",
-              "imagen": "",
-              "creacion": "2015-06-03T12:47:40",
-              "latitud": "-33,4227752685547",
-              "longitud": "-70,6111831665039",
-              "zoom": "12"
-            }
-          ]
-        };
-
-        return [
-            200, 
-            result, 
-            {}
-        ];
-    });
-    //-------------------------------------------------------------
-
-    //REQUIRED EXCEPTION FOR OTHER EXCEPTIONS
-    $httpBackend.whenPOST(/.*/).passThrough();
-    $httpBackend.whenPUT(/.*/).passThrough();
-    $httpBackend.whenGET(/.*/).passThrough();
-    $httpBackend.whenDELETE(/.*/).passThrough();
-
-});;(function() {
+]);;(function() {
     /*
         DIRECTIVES: RANGE
      */
@@ -220,6 +163,111 @@ angular.manifiest('app', [
             //----------------------------------------------
         });
 })();
+;'use strict';
+angular.module("ngLocale", [], ["$provide", function($provide) {
+var PLURAL_CATEGORY = {ZERO: "zero", ONE: "one", TWO: "two", FEW: "few", MANY: "many", OTHER: "other"};
+$provide.value("$locale", {
+  "DATETIME_FORMATS": {
+    "AMPMS": [
+      "a.\u00a0m.",
+      "p.\u00a0m."
+    ],
+    "DAY": [
+      "domingo",
+      "lunes",
+      "martes",
+      "mi\u00e9rcoles",
+      "jueves",
+      "viernes",
+      "s\u00e1bado"
+    ],
+    "ERANAMES": [
+      "antes de Cristo",
+      "despu\u00e9s de Cristo"
+    ],
+    "ERAS": [
+      "a. C.",
+      "d. C."
+    ],
+    "MONTH": [
+      "enero",
+      "febrero",
+      "marzo",
+      "abril",
+      "mayo",
+      "junio",
+      "julio",
+      "agosto",
+      "setiembre",
+      "octubre",
+      "noviembre",
+      "diciembre"
+    ],
+    "SHORTDAY": [
+      "dom.",
+      "lun.",
+      "mar.",
+      "mi\u00e9.",
+      "jue.",
+      "vie.",
+      "s\u00e1b."
+    ],
+    "SHORTMONTH": [
+      "ene.",
+      "feb.",
+      "mar.",
+      "abr.",
+      "may.",
+      "jun.",
+      "jul.",
+      "ago.",
+      "set.",
+      "oct.",
+      "nov.",
+      "dic."
+    ],
+    "fullDate": "EEEE, d 'de' MMMM 'de' y",
+    "longDate": "d 'de' MMMM 'de' y",
+    "medium": "dd-MM-y h:mm:ss a",
+    "mediumDate": "dd-MM-y",
+    "mediumTime": "h:mm:ss a",
+    "short": "dd-MM-yy h:mm a",
+    "shortDate": "dd-MM-yy",
+    "shortTime": "h:mm a"
+  },
+  "NUMBER_FORMATS": {
+    "CURRENCY_SYM": "$",
+    "DECIMAL_SEP": ",",
+    "GROUP_SEP": ".",
+    "PATTERNS": [
+      {
+        "gSize": 3,
+        "lgSize": 3,
+        "maxFrac": 3,
+        "minFrac": 0,
+        "minInt": 1,
+        "negPre": "-",
+        "negSuf": "",
+        "posPre": "",
+        "posSuf": ""
+      },
+      {
+        "gSize": 3,
+        "lgSize": 3,
+        "maxFrac": 2,
+        "minFrac": 2,
+        "minInt": 1,
+        "negPre": "\u00a4-",
+        "negSuf": "",
+        "posPre": "\u00a4",
+        "posSuf": ""
+      }
+    ]
+  },
+  "id": "es-cl",
+  "pluralCat": function(n, opt_precision) {  if (n == 1) {    return PLURAL_CATEGORY.ONE;  }  return PLURAL_CATEGORY.OTHER;}
+});
+}]);
 ;//------------------------------------------------------
 // Company: Valentys Ltda.
 // Author: dmunozgaete@gmail.com
@@ -318,7 +366,6 @@ angular.module('material-icons', ['ngMaterial'])
         , 'app'                         //CUSTOM PROJECT LIBRARY
         , 'material-icons'              //CUSTOM PROJECT LIBRARY
         , 'hljs'                        //HIGHLIGHT
-        , 'mocks'                       //DEMO MOCK'S
         , 'angular-google-analytics'    //ANGULAR GOOGLE ANALITYCS
     ])
     .run(function($location, $Configuration, $log, Analytics) {

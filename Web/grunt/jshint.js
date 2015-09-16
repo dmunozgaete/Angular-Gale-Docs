@@ -1,3 +1,10 @@
+//------------------------------------------------------
+// Company: Valentys Ltda.
+// Author: dmunozgaete@gmail.com
+// 
+// Description: Validate the Best Practices to work with a JS
+// 
+//------------------------------------------------------
 module.exports = function(grunt, options) {
 
     grunt.registerTask('validate', ['jshint']);   //ALIAS
