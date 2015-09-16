@@ -4,6 +4,11 @@
      */
     angular.module('app.demos', ['gale', 'ngMaterial'])
         /*
+            GENERAL DEMO CONTROLLER
+         */
+        .controller("DemoController", function($scope) {
+        })
+        /*
             DIRECTIVES: EMAIL
          */
         .controller("EmailDemoController", function($scope) {

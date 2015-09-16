@@ -7,7 +7,7 @@ angular.module("config", [])
             author: "David Antonio Muñoz Gaete",
             environment: "development",
             language: "es",
-            name: "Gale Doc's",
+            name: "Angular-Gale Doc's",
             home: "/demo/gettingStarted/introduction"
         },
 
@@ -37,7 +37,7 @@ angular.module("config", [])
 
             //UX References
             {
-                label: "Interfaz Gráfica",
+                label: "Referencia",
                 name: "ux",
                 items: [
                     {
@@ -93,71 +93,6 @@ angular.module("config", [])
 
                         ]
                     }   
-                ]
-            },
-
-            //Server References
-            {
-                label: "API",
-                name: "api",
-                items: [
-                    {
-                        label: "Controladores",
-                        name: "controllers",
-                        items: [
-                            { name: "RestController" },
-                            { name: "QueryableController" }
-                        ]
-                    },
-
-                    {
-                        label: "Modelos",
-                        name: "models",
-                        items: [
-                            { name: "definition", label:"Definición" },
-                            { name: "example", label:"Ejemplo de Creación" }
-                        ]
-                    },
-
-                    {
-                        label: "Servicios",
-                        name: "services",
-                        items: [
-                            { name: "definition", label:"Definición" }
-                        ]
-                    },
-
-                    {
-                        label: "Respuestas HTTP",
-                        name: "services",
-                        items: [
-                            { name: "HttpBaseActionResult" },
-                            { name: "HttpFileActionResult" },
-                            { name: "HttpCreationActionResult" },
-                            { name: "HttpReadActionResult" },
-                            { name: "HttpUpdateActionResult" },
-                            { name: "HttpDeleteActionResult" },
-                            { name: "HttpQueryableActionResult" }
-                        ]
-                    },
-
-                    {
-                        label: "Seguridad",
-                        name: "security",
-                        items: [
-                            { name: "jwt" , label:"Autorización JWT" }
-                        ]
-                    } /*,
-
-                    {
-                        label: "Ambientes",
-                        name: "staging",
-                        items: [
-                            { name: "Introduction" },
-                            { name: "Deployment" },
-                            { name: "Production" }
-                        ]
-                    } */
                 ]
             },
 
