@@ -8,17 +8,21 @@
 // 
 /// NOTE: If you want to add dependdencies THIS IS THE FILE ;)!
 //------------------------------------------------------
-module.exports = function(grunt, options) {
-    var conf = {
-        production: {
-            options: {
+module.exports = function(grunt, options)
+{
+    return {
+        production:
+        {
+            options:
+            {
                 separator: ';',
             },
-            files: {
+            files:
+            {
                 'app/dist/js/bundles.js': [
                     'app/bundles/**/*.js',
                 ],
-                
+
                 'app/dist/js/controllers.js': [
                     'app/views/**/*.js',
                     'app/application.js',
@@ -26,8 +30,8 @@ module.exports = function(grunt, options) {
                 ],
 
                 'app/dist/js/application.js': [
-                	'app/dist/js/bundles.js',
-                	'app/dist/js/controllers.js'
+                    'app/dist/js/bundles.js',
+                    'app/dist/js/controllers.js'
                 ],
 
                 'app/dist/css/application.css': [
@@ -37,6 +41,4 @@ module.exports = function(grunt, options) {
             }
         }
     };
-    //---------------------------------------------------------------
-    return conf;
 };

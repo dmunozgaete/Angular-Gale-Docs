@@ -3,7 +3,6 @@
         , 'app'                         //CUSTOM PROJECT LIBRARY
         , 'material-icons'              //CUSTOM PROJECT LIBRARY
         , 'hljs'                        //HIGHLIGHT
-        , 'mocks'                       //DEMO MOCK'S
         , 'angular-google-analytics'    //ANGULAR GOOGLE ANALITYCS
     ])
     .run(function($location, $Configuration, $log, Analytics) {

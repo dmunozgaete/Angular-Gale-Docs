@@ -4,9 +4,8 @@
 // 
 // Description: Clean a folder, (dist folder for example)
 // 
-// URL: https://www.npmjs.com/package/grunt-contrib-concat
+// URL: https://www.npmjs.com/package/grunt-contrib-clean
 // 
-/// NOTE: If you want to add dependdencies THIS IS THE FILE ;)!
 //------------------------------------------------------
 module.exports = function(grunt, options) {
 
