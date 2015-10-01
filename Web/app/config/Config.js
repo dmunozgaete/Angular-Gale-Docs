@@ -50,6 +50,7 @@ angular.module("config", [])
                             { name: "$Api" },
                             { name: "$LocalStorage" },
                             { name: "$Timer" },
+                            { name: "Identity" },
                             { name: "KQLBuilder" }
 
                         ]
